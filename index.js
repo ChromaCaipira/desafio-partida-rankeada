@@ -1,27 +1,29 @@
-// Dados do herói
+// Dados do jogador
 let vitorias = 200;
 let derrotas = 90;
 
+// Classificações de Nível
+function rankLevel(saldo) {
+  if (saldo <= 10) {
+    return "Ferro";
+  } else if (saldo >= 11 && saldo <= 20) {
+    return "Bronze";
+  } else if (saldo >= 21 && saldo <= 50) {
+    return "Prata";
+  } else if (saldo >= 51 && saldo <= 80) {
+    return "Ouro";
+  } else if (saldo >= 81 && saldo <= 90) {
+    return "Diamante";
+  } else if (saldo >= 91 && saldo <= 100) {
+    return "Lendário";
+  } else if (saldo >= 101) {
+    return "Imortal";
+  }
+}
+
 let saldoVitorias = vitorias - derrotas;
 
-let nivel;
-
-// Classificações de Nível
-if (saldoVitorias <= 10) {
-  nivel = "Ferro";
-} else if (saldoVitorias >= 11 && saldoVitorias <= 20) {
-  nivel = "Bronze";
-} else if (saldoVitorias >= 21 && saldoVitorias <= 50) {
-  nivel = "Prata";
-} else if (saldoVitorias >= 51 && saldoVitorias <= 80) {
-  nivel = "Ouro";
-} else if (saldoVitorias >= 81 && saldoVitorias <= 90) {
-  nivel = "Diamante";
-} else if (saldoVitorias >= 91 && saldoVitorias <= 100) {
-  nivel = "Lendário";
-} else if (saldoVitorias >= 101) {
-  nivel = "Imortal";
-}
+let nivel = rankLevel(saldoVitorias);
 
 // Saída para o jogador
 console.log(
